@@ -271,7 +271,7 @@ export class Analysis extends React.Component {
                         response: "Here you go:",
                         plotted: true,
                         data: [{x: data2, y: data1, type: 'scatter', mode: 'markers', marker: {color: 'red'}}],
-                        layout: {'title': 'Scatter Plot of ' + headers[col1] + ' Against 1 to n', 'xaxis': {'title': headers[col2]}, 'yaxis': {'title': headers[col1]}}
+                        layout: {'title': 'Scatter Plot of ' + headers[col1] + ' vs. 1 to n', 'xaxis': {'title': headers[col2]}, 'yaxis': {'title': headers[col1]}}
                     })
                     /* this.setState({data: 
                         [{x: data2, y: data1, type: 'scatter', mode: 'lines+points', marker: {color: 'red'}}]
@@ -285,7 +285,7 @@ export class Analysis extends React.Component {
                         response: "Here you go:",
                         plotted: true,
                         data: [{x: data1, y: data2, type: 'scatter', mode: 'markers', marker: {color: 'red'}}],
-                        layout: {'title': 'Scatter Plot of ' + headers[col2] + ' Against ' + headers[col1], 'xaxis': {'title': headers[col1]}, 'yaxis': {'title': headers[col2]}}
+                        layout: {'title': 'Scatter Plot of ' + headers[col2] + ' vs. ' + headers[col1], 'xaxis': {'title': headers[col1]}, 'yaxis': {'title': headers[col2]}}
                     })
                     /*this.setState({data: 
                         [{x: data1, y: data2, type: 'scatter', mode: 'lines+points', marker: {color: 'red'}}]
@@ -355,7 +355,11 @@ export class Analysis extends React.Component {
                     response: "Here you go:",
                     plotted: true,
                     data: [{x: values, y: freqs, type: 'bar', marker: {color: 'red'}}],
-                    layout: {}
+                    layout: {
+                        'title': 'Bar Chart for ' + headers[col1],
+                        'xaxis': {'title': headers[col1]}, 
+                        'yaxis': {'title': "Frequency"},
+                    }
                 })
 
                 /* this.setState({data:
@@ -394,7 +398,7 @@ export class Analysis extends React.Component {
                     ],
                     layout: {
                         'showlegend': false,
-                        'title': 'Linear Regression for ' + headers[col2] + ' Against ' + headers[col1],
+                        'title': 'Linear Regression for ' + headers[col2] + ' vs. ' + headers[col1],
                         'xaxis': {'title': headers[col1]}, 
                         'yaxis': {'title': headers[col2]},
                         'annotations': [{'x': boundMin, 'y': regression.slope*boundMin + regression.intercept, 'text': 'Y = ' + regression.slope + '*X + ' + regression.intercept}]
