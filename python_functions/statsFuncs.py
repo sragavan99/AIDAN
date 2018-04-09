@@ -59,22 +59,54 @@ for c in columnNames:
 newcommand = ""
 
 def mean(df, col):
-    return json.dumps({command: newcommand, response: "The mean is: " + df[col].mean(), plotted: false, data: [], layout: {}})
+    return json.dumps({command: newcommand,
+                       response: "The mean is: " + df[col].mean(),
+                       plotted: false,
+                       data: [],
+                       layout: {}})
 
 def median(df, col):
-    return json.dumps({command: newcommand, response: "The median is: " + df[col].median(), plotted: false, data: [], layout: {}})
+    return json.dumps({command: newcommand,
+                       response: "The median is: " + df[col].median(),
+                       plotted: false,
+                       data: [],
+                       layout: {}})
 
 def range(df, col):
-    return json.dumps({command: newcommand, response: "The range is: " + (df[col].max() - df[col].min()), plotted: false, data: [], layout: {}})
-    return df[col].max() - df[col].min()
+    return json.dumps({command: newcommand,
+                       response: "The range is: " + (df[col].max() - df[col].min()),
+                       plotted: false,
+                       data: [],
+                       layout: {}})
 
 def stddev(df, col):
+    return json.dumps({command: newcommand,
+                       response: "The standard deviation is: " + df[col].std,
+                       plotted: false,
+                       data: [],
+                       layout: {}})
 
 def variance(df, col):
+    return json.dumps({command: newcommand,
+                       response: "The variance is: " + df[col].std,
+                       plotted: false,
+                       data: [],
+                       layout: {}})
 
-def correlation(df, col):
+def correlation(df, col1, col2):
+    return json.dumps({command: newcommand,
+                       response: "The correlation is: " + df[col1].corr(df[col2]),
+                       plotted: false,
+                       data: [],
+                       layout: {}})
 
-def scatterPlot(df, col):
+def scatterPlot(df, col1, col2):
+    return json.dumps({ command: newcommand,
+                        response: "Here you go:",
+                        plotted: true,
+                        data: [{x: data1, y: data2, type: 'scatter', mode: 'markers', marker: {color: 'red'}}],
+                        layout: {'title': 'Scatter Plot of ' + headers[col2] + ' vs. ' + headers[col1], 'xaxis': {'title': headers[col1]}, 'yaxis': {'title': headers[col2]}}
+                    });
 
 def pieChart(df, col):
 
