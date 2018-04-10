@@ -106,11 +106,31 @@ def scatterPlot(df, col1, col2):
                         plotted: true,
                         data: [{x: data1, y: data2, type: 'scatter', mode: 'markers', marker: {color: 'red'}}],
                         layout: {'title': 'Scatter Plot of ' + headers[col2] + ' vs. ' + headers[col1], 'xaxis': {'title': headers[col1]}, 'yaxis': {'title': headers[col2]}}
-                    });
+                    })
 
 def pieChart(df, col):
+    freqs = df[col].value_counts().tolist()
+    valNames = df[col].value_counts().keys().tolist()
+
+    return json.dumps({command: newcommand,
+                       response: "Here you go:",
+                       plotted: true,
+                       data: [{values: freqs, labels: valNames, type: 'pie', marker: {color: 'red'}}],
+                       layout: {'title': 'Pie Chart for ' + headers[col1]}
+                       })
 
 def barGraph(df, col):
+    freqs = df[col].value_counts().tolist()
+    valNames = df[col].value_counts().keys().tolist()
+
+    return json.dumps({command: newcommand,
+                       response: "Here you go:",
+                       plotted: true,
+                       data: [{x: valNames, y: freqs, type: 'bar', marker: {color: 'red'}}],
+                       layout: {'title': 'Bar Chart for ' + col,
+                                'xaxis': {'title': col},
+                                'yaxis': {'title': "Frequency"}}
+                    })
 
 def linearRegression(df, col):
 
