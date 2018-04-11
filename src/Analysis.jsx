@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { render } from 'react-dom';
 import $ from 'jquery';
-import IframeComm from 'react-iframe-comm';
 import Plot from 'react-plotly.js';
 import SimpleLinearRegression from 'ml-regression-simple-linear';
 
