@@ -579,13 +579,7 @@ export class Analysis extends React.Component {
           </div>
         <div className="row">
           <div className="col-md-4">
-            {/*<IframeComm
-                attributes={attributes}
-                postMessageData={postMessageData}
-                handleReady={onReady}
-                handleReceiveMessage={onReceiveMessage}
-            />*/}
-            <iframe id='chatbot' src='./src/chatbot2.html' width='500' height='570' align='left'/>
+            <iframe id='chatbot' src='./src/chatbot3.html' width='500' height='570' align='left'/>
           </div>
           {/*<div>
               <p align='right'> "Stat: {this.state.mean}" </p>

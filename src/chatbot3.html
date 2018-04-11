@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="bot"/>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+    <script>
+      const speechOptions = {
+        speechRecognizer: new BotChat.Speech.BrowserSpeechRecognizer(),
+        speechSynthesizer: new BotChat.Speech.BrowserSpeechSynthesizer()
+      };
+      BotChat.App({
+        directLine: { secret: "gsP6aUq3PGs.cwA.f6g.6ucfSyY0sKMCgDqyCOrv52jnyMW7vNKMJZ1uXmbv9DI" },
+        user: { id: 'sragavan' },
+        bot: { id: 'AIDAN2' },
+        resize: 'detect',
+        speechOptions: speechOptions
+      }, document.getElementById("bot"));
+    </script>
+  </body>
+</html>
