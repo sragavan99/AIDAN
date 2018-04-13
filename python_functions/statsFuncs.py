@@ -5,12 +5,14 @@
 import numpy as np
 import pandas as pd
 import difflib as dl
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
 import json
 
 # importing the csv file
 
-dataFrame = pd.read_csv("path-to-file.csv")
+dataFrame = pd.read_csv("C:/Users/pima-indians-diabetes.csv", error_bad_lines=False)
 
+print(dataFrame["2-Hour serum insulin (mu U/ml)"])
 
 ####################################################################################################
 # Function for the Levenshtein distance of two strings (utilizes dynamic programming)
@@ -132,6 +134,53 @@ def barGraph(df, col):
                                 'yaxis': {'title': "Frequency"}}
                     })
 
-def linearRegression(df, col):
+def linearRegression(df, col1, col2):
+# Implement bound max and min (should be very easy)
+    linReg = polyfit(df[col1], df[col2])
+    return json.dumps({
+        command: newcommand,
+        response: "Here you go:",
+        plotted: true,
+        data: [{
+            x: [boundMin, boundMax],
+            y: [linReg[0] * boundMin + lineReg[1], linReg[o] * boundMax + lineReg[1]],
+            type: 'scatter',
+            mode: 'lines',
+            marker: {color: 'black'}
+        },
+            {x: data1, y: data2, type: 'scatter', mode: 'markers', marker: {color: 'red'}}
+        ],
+        layout: {
+                    'showlegend': false,
+                    'title': 'Linear Regression for ' + headers[col2] + ' vs. ' + headers[col1],
+                    'xaxis': {'title': headers[col1]},
+                    'yaxis': {'title': headers[col2]},
+                    'annotations': [{'x': boundMin, 'y': regression.slope * boundMin + regression.intercept,
+                                     'text': 'Y = ' + regression.slope + '*X + ' + regression.intercept}]
+                }
+
+        })
 
 def svm(df, col):
+    y = frame[col].values
+    # convert the labels from strings to numbers (0,1,2....)
+    y = LabelEncoder().fit_transform(y)
+
+    frame = frame.drop([col], axis=1)
+
+    for f in frame.columns:
+        if frame[f].dtype == 'object':
+            lbl_enc = LabelEncoder()
+            # same as above encoding. it takes every object dtype from
+            # pandas dataframe and converts to numerical labels
+            frame[f] = lbl_enc.fit_transform(frame[f].values)
+
+    X = frame.values
+    # binarize the encoded columns. this is not needed if you are using a tree based algorithm
+    ohe = OneHotEncoder(categorical_features=[0, 1, 4, 5, 6])
+    X = ohe.fit_transform(X)
+
+    # use the following for SVMs (with_mean=False for sparse data)
+    scl = StandardScaler(with_mean=False)
+        X = scl.fit_transform(X)
+        # fit model here: model.fit(X, y)
