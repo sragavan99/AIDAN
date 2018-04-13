@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { render } from 'react-dom';
 import ReactModal from 'react-modal';
 import { Analysis } from './Analysis.jsx';
+import axios from 'axios';
 // import socketIOClient from 'socket.io-client';
 // import socketIOStream from 'socket.io-stream';
 
@@ -35,8 +36,10 @@ export default class App extends React.Component {
     console.log(event.target.files[0].name);
     console.log(event.target.files[0].size);
     // this.setState({datasetSrc: event.target.files[0], submitEnabled: true});
-    var url = window.URL.createObjectURL(event.target.files[0]);
-    this.setState({datasetSrc: url, submitEnabled: true});
+    /*var url = window.URL.createObjectURL(event.target.files[0]);
+    var formData = new FormData();
+    formData.append("csvFile", event.target.files[0]);*/
+    this.setState({datasetSrc: event.target.files[0], submitEnabled: true});
   }
 
   handleSubmit() {
@@ -72,6 +75,16 @@ export default class App extends React.Component {
       console.log(file.size);
     }
   console.log("DONE SUBMITTING");*/}
+
+    var formData = new FormData();
+    formData.append("csvFile", this.state.datasetSrc);
+
+    console.log(this.state.datasetSrc);
+    axios.post('http://132.148.155.201:50000', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
 
     this.setState({showChatbot: true});
   }
