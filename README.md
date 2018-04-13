@@ -1,8 +1,8 @@
 # AIDAN
 
-<h1> How to use AIDAN <h1>
+<h1> How to use AIDAN </h1>
 
-<b> Try AIDAN here: http://aidan-labs.com/ <b>
+<b> Try AIDAN here: http://aidan-labs.com/ </b>
   
 Instructions: Upload a dataset in the form of a .CSV file. AIDAN currently supports the following capabilities: 
  * 1-Var Statistics: Mean, Median, Standard Deviation
@@ -12,7 +12,7 @@ Instructions: Upload a dataset in the form of a .CSV file. AIDAN currently suppo
  
  While the bot supports a wide range of conversation, it still cannot generalize to all user input. Thus, please type in "help" to get a list of all the acceptable ways to make a request to the bot. Otherwise, it's pretty intuitive– just start a conversation, and see your data come to life!
 
-<h1> What (and why) we are <h1>
+<h1> What (and why) we are </h1>
 
 By now, it's almost cliche to say that data is everywhere. That's because it really is. Whether you're a statistician, a biologist, historian, or even a high school student— you're inevitably going to use data. But tools to analyze this data are either too complicated to use or too simple to be of use. That's where we got our inspiration, that with the advent of powerful conversational AI, we can empower people to take control of and analyze their datasets. A.I.D.A.N. stands for 'AI for Data Analysis, "Now!"'. We provide a radically simple conversational interface for users to work in very sophisticated ways with their data. 
 
@@ -20,7 +20,7 @@ The user can upload their own dataset (currently in .csv file format), and we th
 
 AIDAN supports a lot of functionality, including one and two-variable statistics, data visualization, and machine learning. In addition, we allow the user to converse with AIDAN using either text or their voice, as well as the ability to interact with the plots (zoom in, hover, etc.) and export them in standard image formats. We have also built in contextual understanding for the voice option, such that we can still understand the intent of the user even if speech recognition does not interpret the user entirely correctly.
 
-<h1> Our Technology <h1>
+<h1> Our Technology </h1>
 
 Our entire platform is built on Microsoft Azure. We built AIDAN using the Azure Bot Service and trained it with LUIS (Language Understanding and Intelligence Service). This allowed us to build a powerful and highly customizable chatbot, with a large number of intents and the ability to understand human input. Compared to the previous chatbot platform we began with, Amazon Lex, Azure Bot Service gave us more power and flexibility. The bot was integrated into the frontend of the website, which was built using ReactJS. We built our backend server in Python, where we wrote the data analysis functions using well-known data analysis and machine learning libraries. We used Azure File Storage to store and retrieve the dataset that the user uploads.
 
