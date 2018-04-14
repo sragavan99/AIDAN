@@ -15,7 +15,7 @@ Instructions: Upload a dataset in the form of a .CSV file (or use our sample csv
  Note a couple of important user actions (all of which we will improve in a future version):
  - <b> Currently, only one user can use the application at a time </b>
  - The user must enable the microphone and "load unsafe scripts" (top right, shield icon in Chrome next to star)
- - To use the voice feature, click slightly to the left of the voice button
+ - To use the voice feature, click slightly around the voice button if it does not register your click initially
  - For optimal viewing quality, you may need to zoom out the page to 90% (Command- in Mac, Ctrl- in PC)
  
 
