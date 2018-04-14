@@ -4,7 +4,7 @@
 
 <b> Try AIDAN here: http://aidan-labs.com/ </b>
   
-Instructions: Upload a dataset in the form of a .CSV file. AIDAN currently supports the following capabilities: 
+Instructions: Upload a dataset in the form of a .CSV file (or use our sample csv file, pima_indians_diabetes.csv— this option is available if you scroll down). AIDAN currently supports the following capabilities: 
  * 1-Var Statistics: Mean, Median, Standard Deviation
  * 2-Var Statistics: Correlation
  * Data Visualization: Bar Chart, Pie Chart, Scatter Plot
