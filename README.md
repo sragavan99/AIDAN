@@ -2,7 +2,7 @@
 
 <h1> How to use AIDAN </h1>
 
-<b> Try AIDAN here: http://aidan-labs.com/ </b>
+<b> Try AIDAN here: https://aidan-labs.com/ </b>
   
 Instructions: Upload a dataset in the form of a .CSV file (or use our sample csv file, pima-indians-diabetes.csv— this option is available if you scroll down). AIDAN currently supports the following capabilities: 
  * 1-Var Statistics: Mean, Median, Standard Deviation
@@ -11,6 +11,11 @@ Instructions: Upload a dataset in the form of a .CSV file (or use our sample csv
  * Machine Learning: Linear Regression, Support Vector Machine (Binary Classification)
  
  While the bot supports a wide range of conversation, it still cannot generalize to all user input. Thus, please type in "help" to get a list of some acceptable ways to make a request to the bot. Otherwise, it's pretty intuitive– just start a conversation, and see your data come to life!
+ 
+ Note a couple of important user actions (that we will fix in a future version):
+ - The user must enable the microphone and "load unsafe scripts" (top right, shield icon in Chrome)
+ - To use the voice feature, click slightly to the left of the voice button
+ - <b> Currently, only one user can use the application at a time </b>
 
 <h1> What (and why) we are </h1>
 
