@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Alexa Analytics</title>
+    <title>AIDAN Labs</title>
 </head>
 <body>
     <div id="app"> </div>
+    <script src='/src/azure-storage.file.js'> </script>
+    <script src='/src/azure-storage.file.min.js'> </script>
+    <script >
+        function uploadToAzure(file){
+          console.log('Function from index.html');
+          var fileService = AzureStorage.File.createFileService('DefaultEndpointsProtocol=https;AccountName=aidanstoring2;AccountKey=LqFolz9P9CgAZQK459VVGzSxqRwcsmGmw3YKGhSNnYNJiiC6L2If2iAS9Fim+vONuIY0wAvRtO2h7uI5dA2TRg==;EndpointSuffix=core.windows.net');
+          fileService.createFileFromBrowserFile('aidanshare', 'aidandirectory', file.name, file, {}, function(error, result, response) {
+          if (!error) {
+            console.log("successful upload!");
+          }
+          });
+        }
+    </script>
 </body>
 </html>
