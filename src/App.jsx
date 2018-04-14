@@ -89,9 +89,7 @@ export default class App extends React.Component {
         <div className="text-center">
           <button className = "btn btn-success btn-lg" disabled = {!this.state.submitEnabled} onClick={this.handleSubmit}>Start talking to Aidan!</button> 
         </div>
-        <div>
-          <p> "  " </p>
-        </div>
+        <br/>
         <div className="text-center">
           <button className = "btn btn-success" onClick={this.handleSubmitDefault}>Or start with our sample csv file</button>
         </div>
@@ -101,6 +99,7 @@ export default class App extends React.Component {
         <ReactModal isOpen={this.state.showChatbot} shouldCloseOnEsc={true} contentLabel="Edit" ariaHideApp={false} style={modalStyles}>
           <Analysis csvUrl={this.state.datasetSrc}/>
         </ReactModal>
+        <br/>
       </div>
     );
   }
