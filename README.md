@@ -15,7 +15,7 @@ Instructions: Upload a dataset in the form of a .CSV file (or use our sample csv
  Note a couple of important user actions (that we will fix in a future version):
  - The user must enable the microphone and "load unsafe scripts"
  - To use the voice feature, click slightly to the left of the voice button
- - <b> Currently, only one user can use the application at a time <b>
+ - <b> Currently, only one user can use the application at a time </b>
 
 <h1> What (and why) we are </h1>
 
