@@ -27,6 +27,7 @@ export default class App extends React.Component {
     };
     this.handleDatasetChange = this.handleDatasetChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmitDefault = this.handleSubmitDefault.bind(this);
   }
 
   handleDatasetChange(event) {
@@ -44,7 +45,22 @@ export default class App extends React.Component {
     window.uploadToAzure(this.state.datasetSrc);
 
     console.log(this.state.datasetSrc);
-    var bodyParams = this.state.datasetSrc.name + new Array(1000 - this.state.datasetSrc.name.length - 7 + 1).join(':');
+    var bodyParams = this.state.datasetSrc.name + new Array(994 - this.state.datasetSrc.name.length).join(':');
+    setTimeout(axios.post('http://132.148.155.201:50000', {'Upload':bodyParams}, {
+      headers: {
+        'Content-Type': 'text/plain'
+      }
+    }).then(response => {
+      console.log("POST SUCCESSFUL");
+      console.log(response);
+    }), 2000);
+
+    this.setState({showChatbot: true});
+  }
+
+  handleSubmitDefault() {
+    console.log("Submitted default");
+    var bodyParams = "pima-indians-diabetes.csv" + new Array(969).join(':');
     setTimeout(axios.post('http://132.148.155.201:50000', {'Upload':bodyParams}, {
       headers: {
         'Content-Type': 'text/plain'
@@ -71,7 +87,16 @@ export default class App extends React.Component {
         </div>
         <br/>
         <div className="text-center">
-          <button className = "btn btn-success btn-lg" disabled = {!this.state.submitEnabled} onClick={this.handleSubmit}>Start talking to Aidan!</button>
+          <button className = "btn btn-success btn-lg" disabled = {!this.state.submitEnabled} onClick={this.handleSubmit}>Start talking to Aidan!</button> 
+        </div>
+        <div>
+          <p> "  " </p>
+        </div>
+        <div className="text-center">
+          <button className = "btn btn-success" onClick={this.handleSubmitDefault}>Or start with our sample csv file</button>
+        </div>
+        <div className="text-center">
+          <a href="https://github.com/mpsenka21/AIDAN/blob/master/pima-indians-diabetes.csv" className="text-center">View sample csv here</a>
         </div>
         <ReactModal isOpen={this.state.showChatbot} shouldCloseOnEsc={true} contentLabel="Edit" ariaHideApp={false} style={modalStyles}>
           <Analysis csvUrl={this.state.datasetSrc}/>
