@@ -12,10 +12,12 @@ Instructions: Upload a dataset in the form of a .CSV file (or use our sample csv
  
  While the bot supports a wide range of conversation, it still cannot generalize to all user input. Thus, please type in "help" to get a list of some acceptable ways to make a request to the bot. Otherwise, it's pretty intuitive– just start a conversation, and see your data come to life!
  
- Note a couple of important user actions (that we will fix in a future version):
- - The user must enable the microphone and "load unsafe scripts" (top right, shield icon in Chrome)
- - To use the voice feature, click slightly to the left of the voice button
+ Note a couple of important user actions (all of which we will fix in a future version):
  - <b> Currently, only one user can use the application at a time </b>
+ - The user must enable the microphone and "load unsafe scripts" (top right, shield icon in Chrome next to star)
+ - To use the voice feature, click slightly to the left of the voice button
+ - For optimal viewing quality, you may need to zoom out the page to 90% (Command- in Mac, Ctrl- in PC)
+ 
 
 <h1> What (and why) we are </h1>
 
