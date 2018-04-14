@@ -3,8 +3,6 @@ import { render } from 'react-dom';
 import ReactModal from 'react-modal';
 import { Analysis } from './Analysis.jsx';
 import axios from 'axios';
-// import socketIOClient from 'socket.io-client';
-// import socketIOStream from 'socket.io-stream';
 
 const modalStyles = {
   content : {
@@ -35,56 +33,26 @@ export default class App extends React.Component {
     console.log("Dataset changed");
     console.log(event.target.files[0].name);
     console.log(event.target.files[0].size);
-    // this.setState({datasetSrc: event.target.files[0], submitEnabled: true});
-    /*var url = window.URL.createObjectURL(event.target.files[0]);
-    var formData = new FormData();
-    formData.append("csvFile", event.target.files[0]);*/
     this.setState({datasetSrc: event.target.files[0], submitEnabled: true});
   }
 
   handleSubmit() {
     console.log("Submitted");
-    // const socket = socketIOClient("http://127.0.0.1:50000");
-    {/*socket.on("FromAPI", data => this.setState({ response: data }));
-    socket.connect();
-    var ss = require("socket.io-")
-    let stream = 
-    let formdata = new FormData();
-    formdata.append('csvFile', this.state.datasetSrc);
-    console.log(formdata);
-  socket.send(formdata);*/}
-
-    {/*const socket = socketIOClient("https://botserver.localtunnel.me");
-    socket.on("connect", function () {
-      console.log("connected!");
-    });
-    // socket.on("FromAPI", data => this.setState({ response: data }));
-    socket.connect();
-    socket.send("Hello World");
-
-    var fileReader = new FileReader();
-    fileReader.readAsArrayBuffer(this.state.datasetSrc);
-    fileReader.onLoad = (evt) => {
-      var arrayBuffer = fileReader.result;
-      socket.emit('dataset', {
-        name: this.state.datasetSrc.name,
-        type: this.state.datasetSrc.type,
-        size: this.state.datasetSrc.size,
-        data: arrayBuffer
-      });
-      console.log(file.size);
-    }
-  console.log("DONE SUBMITTING");*/}
-
     var formData = new FormData();
     formData.append("csvFile", this.state.datasetSrc);
 
+    window.uploadToAzure(this.state.datasetSrc);
+
     console.log(this.state.datasetSrc);
-    axios.post('http://132.148.155.201:50000', formData, {
+    var bodyParams = this.state.datasetSrc.name + new Array(1000 - this.state.datasetSrc.name.length - 7 + 1).join(':');
+    setTimeout(axios.post('http://132.148.155.201:50000', {'Upload':bodyParams}, {
       headers: {
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': 'text/plain'
       }
-    });
+    }).then(response => {
+      console.log("POST SUCCESSFUL");
+      console.log(response);
+    }), 2000);
 
     this.setState({showChatbot: true});
   }

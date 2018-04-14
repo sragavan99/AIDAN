@@ -37,5 +37,8 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     })
-  ]
+  ],
+  node: {
+    fs: "empty"
+  }
 };
