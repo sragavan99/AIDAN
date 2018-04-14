@@ -39,7 +39,7 @@ export class Analysis extends React.Component {
             }
             this.setState({processes: temp});
         });
-        setTimeout(this.getResults, 5000);
+        setTimeout(this.getResults, 1000);
     }
 
     deleteLastCommand() {
