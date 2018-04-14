@@ -4,13 +4,13 @@
 
 <b> Try AIDAN here: http://aidan-labs.com/ </b>
   
-Instructions: Upload a dataset in the form of a .CSV file (or use our sample csv file, pima_indians_diabetes.csv— this option is available if you scroll down). AIDAN currently supports the following capabilities: 
+Instructions: Upload a dataset in the form of a .CSV file (or use our sample csv file, pima-indians-diabetes.csv— this option is available if you scroll down). AIDAN currently supports the following capabilities: 
  * 1-Var Statistics: Mean, Median, Standard Deviation
  * 2-Var Statistics: Correlation
  * Data Visualization: Bar Chart, Pie Chart, Scatter Plot
  * Machine Learning: Linear Regression, Support Vector Machine (Binary Classification)
  
- While the bot supports a wide range of conversation, it still cannot generalize to all user input. Thus, please type in "help" to get a list of all the acceptable ways to make a request to the bot. Otherwise, it's pretty intuitive– just start a conversation, and see your data come to life!
+ While the bot supports a wide range of conversation, it still cannot generalize to all user input. Thus, please type in "help" to get a list of some acceptable ways to make a request to the bot. Otherwise, it's pretty intuitive– just start a conversation, and see your data come to life!
 
 <h1> What (and why) we are </h1>
 
